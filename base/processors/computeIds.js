@@ -5,6 +5,13 @@ var StringMap = require('stringmap');
  * @dgProcessor computeIdsProcessor
  * @description
  * Compute the id property of each doc based on the tags and other meta-data from a set of templates
+ * Each template is composed of the following attributes, either getId function or idTemplate template string needs to be specified.
+ *
+ * - docTypes: supported document types
+ * - getId: function that returns the id
+ * - getAlias: function that returns the alias Array
+ * - idTemplate: template string that returns the id, ex. '${ docType }'
+ *
  */
 module.exports = function computeIdsProcessor(log, aliasMap, createDocMessage) {
 
